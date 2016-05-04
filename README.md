@@ -1,19 +1,19 @@
 # DotaCardsPlay
-DotaCardsPlay
-开发计划一期（简略）
 
-1.加入httpClient
+### 开发计划一期（简略）
 
-2.接口调用使用json，base64加密
+* 加入httpClient
 
-3.加入Zookeeper
+* 接口调用使用json，base64加密
 
-4.加入数据库
+* 加入Zookeeper
 
-5.加入缓存
+* 加入数据库
 
-6.完善Dota模型（物品、英雄等）
+* 加入缓存
 
-7.完成主要功能模块（战斗，副本等）
+* 完善Dota模型（物品、英雄等）
 
-8.加入会员和登录模块
+* 完成主要功能模块（战斗，副本等）
+
+* 加入会员和登录模块
