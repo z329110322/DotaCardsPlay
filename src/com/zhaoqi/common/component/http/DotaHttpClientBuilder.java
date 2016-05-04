@@ -10,6 +10,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.io.IOException;
@@ -23,7 +24,7 @@ import java.util.List;
 public class DotaHttpClientBuilder {
 
 
-    public static <T> T sendRequest(String args, String url, RequestMethod method, Class<T> clazz, int connectionTimeout, int readTimeOut) {
+    public static String sendRequest(String args, String url, RequestMethod method, int connectionTimeout, int readTimeOut) {
         RequestConfig requestConfig = RequestConfig.custom()
                 .setConnectTimeout(connectionTimeout)
                 .setSocketTimeout(readTimeOut).build();
@@ -35,7 +36,11 @@ public class DotaHttpClientBuilder {
             response = executeGet(args, url, requestConfig);
         }
         if (null != response) {
-
+            try {
+                return  EntityUtils.toString(response.getEntity());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return null;
     }
@@ -56,6 +61,12 @@ public class DotaHttpClientBuilder {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                closeableHttpClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return null;
     }
@@ -69,6 +80,12 @@ public class DotaHttpClientBuilder {
             return response;
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                closeableHttpClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return null;
     }

@@ -9,4 +9,20 @@ public class Critical {
     private Probability criticalProbability;
     // 暴击倍数
     private float criticalMulti;
+
+    public Probability getCriticalProbability() {
+        return criticalProbability;
+    }
+
+    public void setCriticalProbability(Probability criticalProbability) {
+        this.criticalProbability = criticalProbability;
+    }
+
+    public float getCriticalMulti() {
+        return criticalMulti;
+    }
+
+    public void setCriticalMulti(float criticalMulti) {
+        this.criticalMulti = criticalMulti;
+    }
 }

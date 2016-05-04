@@ -12,4 +12,31 @@ public class DamageMethod {
 
     // 技能伤害持续时间
     public SkillDurationTime skillDurationTime;
+
+    // 伤害类型(魔法，物理，纯粹)
+    public String damageType;
+
+    public String getSpellTarget() {
+        return spellTarget;
+    }
+
+    public void setSpellTarget(String spellTarget) {
+        this.spellTarget = spellTarget;
+    }
+
+    public SkillDurationTime getSkillDurationTime() {
+        return skillDurationTime;
+    }
+
+    public void setSkillDurationTime(SkillDurationTime skillDurationTime) {
+        this.skillDurationTime = skillDurationTime;
+    }
+
+    public String getDamageType() {
+        return damageType;
+    }
+
+    public void setDamageType(String damageType) {
+        this.damageType = damageType;
+    }
 }

@@ -6,4 +6,20 @@ package com.zhaoqi.common.model.common;
 public class Probability {
     private float probabilityValue;
     private boolean isPseudoRandom;
+
+    public boolean isPseudoRandom() {
+        return isPseudoRandom;
+    }
+
+    public void setPseudoRandom(boolean pseudoRandom) {
+        isPseudoRandom = pseudoRandom;
+    }
+
+    public float getProbabilityValue() {
+        return probabilityValue;
+    }
+
+    public void setProbabilityValue(float probabilityValue) {
+        this.probabilityValue = probabilityValue;
+    }
 }

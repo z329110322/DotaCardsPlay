@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class DotaHttpClient {
     public static <T> T send(Object params, String url, RequestMethod method, Class<T> clazz,int connectionTimeout,int readTimeOut) {
         String args = JsonUtil.toString(params);
-        return DotaHttpClientBuilder.sendRequest(Base64Utils.encodeToString(args.getBytes()), url, method, clazz, connectionTimeout, readTimeOut);
+        String response = DotaHttpClientBuilder.sendRequest(Base64Utils.encodeToString(args.getBytes()), url, method, connectionTimeout, readTimeOut);
+        if (null == response) {
+            return null;
+        }
+        // base64解码
+        return JsonUtil.toObject(new String(Base64Utils.decodeFromString(response)),clazz);
     }
 }
