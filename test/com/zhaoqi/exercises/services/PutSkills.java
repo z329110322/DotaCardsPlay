@@ -1,8 +1,8 @@
 package com.zhaoqi.exercises.services;
 
 
-import com.zhaoqi.common.dotaInterface.common.SkillEffectObject;
-import com.zhaoqi.common.model.skill.HeroSkill;
+import com.zhaoqi.dotaInterface.common.SkillEffectObject;
+import com.zhaoqi.model.skill.HeroSkill;
 
 /**
  * Created by zhaoqi on 2016/4/27.

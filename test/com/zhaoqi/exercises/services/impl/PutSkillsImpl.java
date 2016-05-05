@@ -1,7 +1,7 @@
 package com.zhaoqi.exercises.services.impl;
 
-import com.zhaoqi.common.dotaInterface.common.SkillEffectObject;
-import com.zhaoqi.common.model.skill.HeroSkill;
+import com.zhaoqi.dotaInterface.common.SkillEffectObject;
+import com.zhaoqi.model.skill.HeroSkill;
 import com.zhaoqi.exercises.annotation.Check;
 import com.zhaoqi.exercises.model.CheckConstants;
 import com.zhaoqi.exercises.services.PutSkills;

@@ -21,7 +21,7 @@
 
     <!--字符串转换器-->
     <bean id="stringConverter"
-          class="com.zhaoqi.common.component.converter.DotaStringHttpMessageConverter">
+          class="com.zhaoqi.component.converter.DotaStringHttpMessageConverter">
         <constructor-arg value="UTF-8" index="0"/> <!--  避免出现乱码 -->
         <property name="supportedMediaTypes">
             <list>
@@ -32,7 +32,7 @@
 
     <!-- json转换器  application/json -->
     <bean id="jsonConverter"
-          class="com.zhaoqi.common.component.converter.DotaJsonHttpMessageConverter">
+          class="com.zhaoqi.component.converter.DotaJsonHttpMessageConverter">
         <property name="features">
             <array>
                 <value>DisableCircularReferenceDetect</value>
