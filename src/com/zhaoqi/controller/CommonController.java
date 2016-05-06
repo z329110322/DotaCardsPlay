@@ -1,9 +1,9 @@
 package com.zhaoqi.controller;
 
+import com.zhaoqi.component.annotation.Json;
 import com.zhaoqi.controller.common.model.ResponseVo;
 import com.zhaoqi.restapi.HelloRequest;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -13,12 +13,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/common")
 @Controller
 public class CommonController {
+
     @RequestMapping("/sayHi")
     @ResponseBody
-    public ResponseVo getFeedback(@RequestBody HelloRequest hello){
+    public ResponseVo getFeedback(@Json HelloRequest hello){
         ResponseVo responseVo = new ResponseVo();
         responseVo.setMsg("success");
         responseVo.setData(hello.getHello());
         return responseVo;
     }
+
 }

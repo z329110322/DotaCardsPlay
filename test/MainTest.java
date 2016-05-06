@@ -1,6 +1,8 @@
+import com.zhaoqi.controller.CommonController;
 import com.zhaoqi.exercises.services.PutSkills;
 import com.zhaoqi.model.hero.DotaHero;
 import com.zhaoqi.model.skill.HeroSkill;
+import com.zhaoqi.restapi.HelloRequest;
 import com.zhaoqi.util.JsonUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,6 +22,9 @@ public class MainTest {
 
     @Resource
     private PutSkills putSkills;
+
+    @Resource
+    CommonController commonController;
 
     @Test
     public void test() {
@@ -48,5 +53,12 @@ public class MainTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void test3() {
+        HelloRequest helloRequest = new HelloRequest();
+        helloRequest.setHello("ha!");
+        System.out.println(JsonUtil.toString(commonController.getFeedback(helloRequest)));
+}
 
 }

@@ -6,6 +6,7 @@ import java.io.IOException;
 
 /**
  * Created by zhaoqi on 2016/5/5.
+ * 过滤器，解决浏览器跨域
  */
 public class DotaCORFilter implements Filter {
     @Override

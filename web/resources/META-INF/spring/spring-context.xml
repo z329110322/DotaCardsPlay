@@ -10,6 +10,24 @@
 
     <context:component-scan base-package="com.zhaoqi" />
 
+
+    <!--RequestMappingHandlerAdapter加入自定义ArgumentsResolver-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="synchronizeOnSession" value="true" />
+        <property name="argumentResolvers">
+            <list>
+                <bean class="com.zhaoqi.component.annotation.SpecialArgumentsResolver"/>
+            </list>
+        </property>
+        <!--注入messageConverters属性，默认的messageConverters无法处理json-->
+        <property name="messageConverters">
+            <list>
+                <ref bean="stringConverter" />
+                <ref bean="jsonConverter" />
+            </list>
+        </property>
+    </bean>
+
     <!-- 启动SpringMVC的注解功能，完成请求和注解POJO的映射 -->
     <mvc:annotation-driven>
         <mvc:message-converters>
@@ -39,4 +57,5 @@
             </array>
         </property>
     </bean>
+
 </beans>

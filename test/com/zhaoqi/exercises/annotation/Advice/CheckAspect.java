@@ -15,8 +15,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class CheckAspect {
 
-//    private final Logger logger = LoggerFactory.getLogger(getClass());
-
     @Around("@annotation(annotation)")
     public Object advice(ProceedingJoinPoint joinPoint, Check annotation) throws Throwable {
         Object[] args = joinPoint.getArgs();

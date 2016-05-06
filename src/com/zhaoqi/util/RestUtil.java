@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 public class RestUtil {
 
-    public static final int CONNECTION_TIME_OUT = 3;
-    public static final int READ_TIME_OUT = 10;
+    private static final int CONNECTION_TIME_OUT = 3;
+    private static final int READ_TIME_OUT = 10;
 
     public static <T> T send(Object params, String url, Class<T> clazz) {
         return send(params, url, RequestMethod.GET, clazz);

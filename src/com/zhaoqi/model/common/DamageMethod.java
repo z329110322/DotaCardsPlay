@@ -8,13 +8,13 @@ import com.zhaoqi.model.skill.SkillDurationTime;
  */
 public class DamageMethod {
     // 施法目标（单人，范围）
-    public String spellTarget;
+    private String spellTarget;
 
     // 技能伤害持续时间
-    public SkillDurationTime skillDurationTime;
+    private SkillDurationTime skillDurationTime;
 
     // 伤害类型(魔法，物理，纯粹)
-    public String damageType;
+    private String damageType;
 
     public String getSpellTarget() {
         return spellTarget;

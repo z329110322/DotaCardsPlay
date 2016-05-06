@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.AbstractHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.http.converter.HttpMessageNotWritableException;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Base64Utils;
 
 import java.io.ByteArrayOutputStream;
@@ -20,6 +21,7 @@ import java.nio.charset.Charset;
 /**
  * Created by zhaoqi on 2016/5/4.
  */
+@Service
 public class DotaJsonHttpMessageConverter extends AbstractHttpMessageConverter<Object> {
     public static final Charset UTF8 = Charset.forName("UTF-8");
     private Charset charset;
@@ -51,7 +53,7 @@ public class DotaJsonHttpMessageConverter extends AbstractHttpMessageConverter<O
         this.features = features;
     }
 
-    protected Object readInternal(Class<? extends Object> clazz, HttpInputMessage inputMessage) throws IOException, HttpMessageNotReadableException {
+    public Object readInternal(Class<? extends Object> clazz, HttpInputMessage inputMessage) throws IOException, HttpMessageNotReadableException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         InputStream in = inputMessage.getBody();
         byte[] buf = new byte[1024];
